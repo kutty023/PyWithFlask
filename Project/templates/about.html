@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h3>About title </h3>
+
+<p>Elephants are the largest living land animals. Three living species are currently recognised: the African bush elephant, the African forest elephant, and the Asian elephant. They are the only surviving members of the family Elephantidae and the order Proboscidea; extinct relatives include mammoths and mastodons.</p>
+
+<form action="/about" method="post">
+    {{ form.csrf_token() }}
+    {{ form.title.label }}
+    {{ form.title }} 
+    {{ form.submit }}
+</form>
+
+{% if title %}
+    <h2> {{ title }}</h2>
+{% endif %}
+
+{% endblock %}
